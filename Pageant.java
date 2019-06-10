@@ -1,25 +1,32 @@
+import java.lang.Error;
 class Pageant {
   FinalistList finalists;
   int MAX_NUMBER =3;
-  int fLength =0;
 
   Pageant(){
     finalists = new FinalistList();
   }
 
   void addFinalist(Finalist finalist){
-    if(MAX_NUMBER >= finalists.numberNodes){
+    System.out.println("num nodes: "+finalists.numberNodes);
+    if(finalists.numberNodes < MAX_NUMBER){
+      System.out.println("addFinalist");
       finalists.add(new Node(finalist));
-      // finalists[fLength] = finalist;
-      fLength++;
+    } else {
+      throw new Error("Exceed");
     }
-
   }
 
   void printContestList(){
-    Finalist ff = finalists.del().data;
-    ff.display();
+    System.out.println("number: " + finalists.numberNodes);
+    int num = finalists.numberNodes;
+    while(num>0){
+      Finalist ff = finalists.del().data;
+      ff.display();
+      num--;
+    }
   }
+
 
 
 }

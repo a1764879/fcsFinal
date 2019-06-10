@@ -1,7 +1,7 @@
 class Finalist extends Contestant {
     String moto;
 
-    Finalist(String name, String country, int age, int[] skills,String moto){
+    Finalist(String name, String country, int age, float[] skills,String moto){
       super(name,country,age,skills);
       this.moto = moto;
     }
@@ -14,6 +14,7 @@ class Finalist extends Contestant {
       System.out.print(":: credibility: "+this.skills[2]+"\n");
       System.out.print(":: grace: "+this.skills[3]+"\n");
       System.out.print(":: authenticity: "+this.skills[4]+"\n");
+      System.out.print(":: mean: "+this.mean+"\n");
       System.out.println(":: moto: "+this.moto);
     }
 
